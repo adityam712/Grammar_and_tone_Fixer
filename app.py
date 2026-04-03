@@ -3,7 +3,7 @@ from groq import Groq
 
 client = Groq(api_key="GROQ_API_KEY")
 
-st.title("✍️ Grammar & Tone Fixer")
+st.title("Grammar & Tone Fixer")
 
 text = st.text_area("Paste your text here", height=200)
 
@@ -24,7 +24,7 @@ if st.button("Fix it!"):
             model="llama-3.3-70b-versatile",
             messages=[{"role": "user", "content": prompt}]
         )
-        st.subheader("✅ Rewritten Text")
+        st.subheader("Rewritten Text")
         st.write(response.choices[0].message.content)
     else:
         st.warning("Please enter some text!")
